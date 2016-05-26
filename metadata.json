@@ -1,0 +1,15 @@
+{
+  "name": "locp-opscenter",
+  "version": "1.0.0",
+  "author": "locp",
+  "summary": "Installs DataStax OpsCenter on RHEL/Ubuntu/Debian.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/locp/opscenter",
+  "project_page": "https://github.com/locp/opscenter",
+  "issues_url": "https://github.com/locp/opscenter/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
