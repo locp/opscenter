@@ -8,6 +8,7 @@ gem 'puppet',                 puppetversion
 gem 'puppetlabs_spec_helper', '>= 1.0.0'
 gem 'puppet-lint',            '>= 1.0.0'
 gem 'puppet-strings'
+gem 'rspec_junit_formatter', '0.2.2'
 gem 'rspec-puppet'
 gem 'yard'
 
