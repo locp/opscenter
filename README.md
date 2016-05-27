@@ -13,6 +13,9 @@
 1. [Development - Guide for contributing to the module](#development)
 
 ## Description
+
+[![Coverage Status](https://coveralls.io/repos/github/locp/opscenter/badge.svg?branch=master)](https://coveralls.io/github/locp/opscenter?branch=master)
+
 Installs DataStax OpsCenter on RHEL/Ubuntu/Debian.  This functionality used to be included with the
 [locp/cassandra](https://forge.puppet.com/locp/cassandra) Puppet module, but now that DataStax are about to change
 their support policy, this functionality has been moved to here.
