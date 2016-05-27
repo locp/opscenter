@@ -1,0 +1,2 @@
+class opscenter::params {
+}
