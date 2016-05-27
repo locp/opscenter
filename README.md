@@ -17,22 +17,14 @@ Installs DataStax OpsCenter on RHEL/Ubuntu/Debian.  This functionality used to b
 [locp/cassandra](https://forge.puppet.com/locp/cassandra) Puppet module, but now that DataStax are about to change
 their support policy, this functionality has been moved to here.
 
+### Change of DataStax OpsCenter Policy
+From
+[DataStax OpsCenter Policy Changes](http://docs.datastax.com/en/opscenter/latest/opsc/opscPolicyChanges.html):
 > Starting with OpsCenter version 6.0, OpsCenter will only be compatible with DataStax Enterprise (DSE) clusters. DataStax will discontinue OpsCenter compatibility with:
 * Open Source Software (OSS) Cassandra clusters
 * DataStax Distributions of Cassandra (DDC) clusters, formerly known as DataStax Community (DSC)
 
-Customers currently using OpsCenter to provision, manage, and maintain their OSS Cassandra, DSC, and DDC clusters must look for other tools to continue their management and maintenance activities. Please see [Planet Cassandra](http://www.planetcassandra.org/related-projects/) for some alternatives.
-
-[DataStax OpsCenter Policy Changes](http://docs.datastax.com/en/opscenter/latest/opsc/opscPolicyChanges.html)
-
-Start with a one- or two-sentence summary of what the module does and/or what
-problem it solves. This is your 30-second elevator pitch for your module.
-Consider including OS/Puppet version it works with.
-
-You can give more descriptive information in a second paragraph. This paragraph
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?" If your module has a range of functionality (installation, configuration,
-management, etc.), this is the time to mention it.
+> Customers currently using OpsCenter to provision, manage, and maintain their OSS Cassandra, DSC, and DDC clusters must look for other tools to continue their management and maintenance activities. Please see [Planet Cassandra](http://www.planetcassandra.org/related-projects/) for some alternatives.
 
 ## Setup
 
