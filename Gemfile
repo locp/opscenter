@@ -11,6 +11,7 @@ gem 'puppet',
     puppetversion
 gem 'puppetlabs_spec_helper',
     '>= 1.0.0'
+gem 'puppet-blacksmith'
 gem 'puppet-lint',
     '>= 1.0.0'
 gem 'puppet-strings'
