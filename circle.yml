@@ -1,3 +1,47 @@
+--- 
+dependencies: 
+  bundler:
+    without: [development]
+  cache_directories:
+    - "~/.rvm/gems"
+  override:
+    - bundle install --without development:
+        timeout: 240
+        environment:
+          PUPPET_GEM_VERSION: '~> 4.0'
+          STRICT_VARIABLES: yes
+  post:
+    - rvm cleanup all
+deployment: 
+  bugfix: 
+    branch: /^bugfix.*/
+    commands: 
+      - "./scripts/circle.bash merge release/patch"
+  feature1:
+    branch: feature/1/v1.0.0
+    commands:
+      - "./scripts/circle.bash merge release/minor"
+  improvement: 
+    branch: /^improvement.*/
+    commands: 
+      - "./scripts/circle.bash merge release/patch"
+  master: 
+    branch: master
+    commands: 
+      - "./scripts/circle.bash merge release/latest"
+      - "./scripts/circle.bash deploy"
+  patch_release: 
+    branch: release/patch
+    commands: 
+      - "./scripts/circle.bash merge release/minor"
+machine: 
+  environment:
+    PUPPET_GEM_VERSION: '~> 4.0'
+    STRICT_VARIABLES: yes
+  ruby:
+    version: 2.1.6
+  services: 
+    - docker
 test:
   override:
     - bundle exec rake rubocop
