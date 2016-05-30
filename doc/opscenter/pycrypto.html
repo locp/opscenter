@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Hostclass: opscenter::pycrypto
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!opscenter/pycrypto.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (p)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../opscenter.html" title="opscenter (hostclass)">opscenter</a></span></span>
+     &raquo; 
+    <span class="title">pycrypto</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="puppet_manifest_list_link"
+        href="../puppet_manifest_list.html">
+      Puppet Manifest List
+    </a>
+  
+    <a class="full_list_link" id="puppet_plugin_list_link"
+        href="../puppet_plugin_list.html">
+      Puppet Plugin List
+    </a>
+  
+    <a class="full_list_link" id="puppet_type_list_link"
+        href="../puppet_type_list.html">
+      Puppet Type List
+    </a>
+  
+    <a class="full_list_link" id="puppet_provider_list_link"
+        href="../puppet_provider_list.html">
+      Puppet Provider List
+    </a>
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div class='module_header'>
+  <h1>
+    Puppet Class: pycrypto
+  </h1>
+</div>
+
+<dl class="box">
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">manifests/pycrypto.pp</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+<p>Class: opscenter::pycrypto</p>
+
+<h6 id="label-"></h6>
+
+<p>Install the pycrypto library which is a [requirement](<a
+href="https://docs.datastax.com/en/latest-opsc/opsc/configure/installPycrypto.html">docs.datastax.com/en/latest-opsc/opsc/configure/installPycrypto.html</a>)
+if you wish to use encryption for configuration values.  This class is
+silently ignored on non-RedHat families.</p>
+
+<p>Attributes</p>
+<hr>
+<ul><li>
+<p>`manage_epel`</p>
+</li></ul>
+
+<p>If set to true, the *<strong>epel-release</strong>* package will be
+installed. Default value &#39;false&#39;</p>
+<ul><li>
+<p>`package_ensure`</p>
+</li></ul>
+
+<p>This is passed to the package reference for *<strong>pycrypto</strong>*. 
+Valid values are *<strong>present</strong>* or a version number. Default
+value &#39;present&#39;</p>
+<ul><li>
+<p>`package_name`</p>
+</li></ul>
+
+<p>The name of the PyCrypto package. Default value &#39;pycrypto&#39;</p>
+<ul><li>
+<p>`provider`</p>
+</li></ul>
+
+<p>The name of the provider of the pycrypto package. Default value
+&#39;pip&#39;</p>
+<ul><li>
+<p>`reqd_pckgs`</p>
+</li></ul>
+
+<p>Packages that are required to install the pycrypto package. Default value
+&#39;[&#39;python-devel&#39;, &#39;python-pip&#39; ]&#39;</p>
+
+<p>Examples</p>
+<hr>
+
+<p>Authors</p>
+<hr>
+
+<p>Author Name &lt;author@domain.com&gt;</p>
+
+<p>Copyright</p>
+<hr>
+
+<p>Copyright 2016 Your name here, unless otherwise noted.</p>
+</p>
+  </div>
+</div>
+<div class="tags">
+  
+    <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      <div class="inline"><p></p></div>
+      <pre class="example code"><code><span>class { 'opscenter':
+  servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+}</span></code></pre>
+    
+    </div>
+  
+  
+  
+</div>
+<h2>Parameter Summary</h2>
+<div class="tags">
+  <ul class="param">
+    <li><span class="name">manage_epel </span><span class="type">(<tt>Any</tt>)</span><tt> => false</tt></li><li><span class="name">package_ensure </span><span class="type">(<tt>Any</tt>)</span><tt> => 'present'</tt></li><li><span class="name">package_name </span><span class="type">(<tt>Any</tt>)</span><tt> => 'pycrypto'</tt></li><li><span class="name">provider </span><span class="type">(<tt>Any</tt>)</span><tt> => 'pip'</tt></li><li><span class="name">reqd_pckgs </span><span class="type">(<tt>Any</tt>)</span><tt> => ['python-devel', 'python-pip' ]</tt></li>
+  </ul>
+</div>
+</div>
+
+    <div id="footer">
+  Generated on Mon May 30 09:28:23 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.6).
+</div>
+
+  </body>
+</html>

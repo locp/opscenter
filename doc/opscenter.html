@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Hostclass: opscenter
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!opscenter.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (o)</a> &raquo;
+    
+    
+    <span class="title">opscenter</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="puppet_manifest_list_link"
+        href="puppet_manifest_list.html">
+      Puppet Manifest List
+    </a>
+  
+    <a class="full_list_link" id="puppet_plugin_list_link"
+        href="puppet_plugin_list.html">
+      Puppet Plugin List
+    </a>
+  
+    <a class="full_list_link" id="puppet_type_list_link"
+        href="puppet_type_list.html">
+      Puppet Type List
+    </a>
+  
+    <a class="full_list_link" id="puppet_provider_list_link"
+        href="puppet_provider_list.html">
+      Puppet Provider List
+    </a>
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div class='module_header'>
+  <h1>
+    Puppet Class: opscenter
+  </h1>
+</div>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="opscenter/params.html" title="opscenter::params (hostclass)">opscenter::params</a></span></span>
+      <ul class="fullTree">
+        
+          <li class="next"><span class='object_link'><a href="opscenter/params.html" title="opscenter::params (hostclass)">opscenter::params</a></span></li>
+        
+          <li class="next">opscenter</li>
+        
+      </ul>
+      <a href="#" class="inheritanceTree">show all</a>
+    </dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">manifests/init.pp</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+<p>Class: opscenter</p>
+
+<h6 id="label-"></h6>
+
+<p>Install and configure DataStax OpsCenter</p>
+
+<p>Parameters</p>
+<hr>
+
+<p>Document parameters here.</p>
+<ul><li>
+<p>`sample parameter`</p>
+</li></ul>
+
+<p>Explanation of what this parameter affects and what it defaults to. e.g.
+“Specify one or more upstream ntp servers as an array.”</p>
+
+<p>Examples</p>
+<hr>
+
+<p>Authors</p>
+<hr>
+
+<p>Author Name &lt;author@domain.com&gt;</p>
+
+<p>Copyright</p>
+<hr>
+
+<p>Copyright 2016 Your name here, unless otherwise noted.</p>
+</p>
+  </div>
+</div>
+<div class="tags">
+  
+    <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      <div class="inline"><p></p></div>
+      <pre class="example code"><code><span>class { 'opscenter':
+  servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
+}</span></code></pre>
+    
+    </div>
+  
+  
+  
+</div>
+<h2>Parameter Summary</h2>
+<div class="tags">
+  <ul class="param">
+    <li><span class="name">agents_agent_certfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_agent_keyfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_agent_keyfile_raw </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_config_sleep </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_fingerprint_throttle </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_incoming_interface </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_incoming_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_install_throttle </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_not_seen_threshold </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_path_to_deb </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_path_to_find_java </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_path_to_installscript </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_path_to_rpm </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_path_to_sudowrap </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_reported_interface </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_runs_sudo </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_scp_executable </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_executable </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_keygen_executable </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_keyscan_executable </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_sys_known_hosts_file </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssh_user_known_hosts_file </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssl_certfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_ssl_keyfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_tmp_dir </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">agents_use_ssl </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">authentication_audit_auth </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">authentication_audit_pattern </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">authentication_enabled </span><span class="type">(<tt>Any</tt>)</span><tt> => 'False'</tt></li><li><span class="name">authentication_method </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">authentication_passwd_db </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">authentication_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">cloud_accepted_certs </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">clusters_add_cluster_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">clusters_startup_sleep </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">config_file </span><span class="type">(<tt>Any</tt>)</span><tt> => '/etc/opscenter/opscenterd.conf'</tt></li><li><span class="name">config_purge </span><span class="type">(<tt>Any</tt>)</span><tt> => false</tt></li><li><span class="name">definitions_auto_update </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_definitions_dir </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_download_filename </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_download_host </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_download_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_hash_filename </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_sleep </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_ssl_certfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">definitions_use_ssl </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">failover_configuration_directory </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">failover_heartbeat_fail_window </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">failover_heartbeat_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">failover_heartbeat_reply_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">hadoop_base_job_tracker_proxy_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">package_ensure </span><span class="type">(<tt>Any</tt>)</span><tt> => present</tt></li><li><span class="name">package_name </span><span class="type">(<tt>Any</tt>)</span><tt> => 'opscenter'</tt></li><li><span class="name">provisioning_agent_install_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">provisioning_keyspace_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">provisioning_private_key_dir </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_admin_group_name </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_connection_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_debug_ssl </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_group_name_attribute </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_group_search_base </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_group_search_filter </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_group_search_filter_with_dn </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_group_search_type </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_ldap_security </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_opt_referrals </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_protocol_version </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_search_dn </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_search_password </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_server_host </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_server_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_ssl_cacert </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_ssl_cert </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_ssl_key </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_tls_demand </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_tls_reqcert </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_uri_scheme </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_user_memberof_attribute </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_user_search_base </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ldap_user_search_filter </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">logging_level </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">logging_log_length </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">logging_log_path </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">logging_max_rotate </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">logging_resource_usage_interval </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">orbited_longpoll </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_alert_on_repair_failure </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_cluster_stabilization_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_error_logging_window </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_incremental_err_alert_threshold </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_incremental_range_repair </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_incremental_repair_tables </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_ks_update_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_log_directory </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_log_length </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_max_err_threshold </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_max_parallel_repairs </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_max_pending_repairs </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_max_rotate </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_min_repair_time </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_min_throughput </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_num_recent_throughputs </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_persist_directory </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_persist_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_restart_period </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_single_repair_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_single_task_err_threshold </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">repair_service_snapshot_override </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">request_tracker_queue_size </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">security_config_encryption_active </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">security_config_encryption_key_name </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">security_config_encryption_key_path </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">service_enable </span><span class="type">(<tt>Any</tt>)</span><tt> => true</tt></li><li><span class="name">service_ensure </span><span class="type">(<tt>Any</tt>)</span><tt> => 'running'</tt></li><li><span class="name">service_name </span><span class="type">(<tt>Any</tt>)</span><tt> => 'opscenterd'</tt></li><li><span class="name">service_provider </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">service_systemd </span><span class="type">(<tt>Any</tt>)</span><tt> => false</tt></li><li><span class="name">service_systemd_tmpl </span><span class="type">(<tt>Any</tt>)</span><tt> => 'opscenter/opscenterd.service.erb'</tt></li><li><span class="name">spark_base_master_proxy_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">stat_reporter_initial_sleep </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">stat_reporter_interval </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">stat_reporter_report_file </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">stat_reporter_ssl_key </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ui_default_api_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ui_max_metrics_requests </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ui_node_detail_refresh_delay </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">ui_storagemap_ttl </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_interface </span><span class="type">(<tt>Any</tt>)</span><tt> => '0.0.0.0'</tt></li><li><span class="name">webserver_log_path </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_port </span><span class="type">(<tt>Any</tt>)</span><tt> => 8888</tt></li><li><span class="name">webserver_ssl_certfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_ssl_keyfile </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_ssl_port </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_staticdir </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_sub_process_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li><li><span class="name">webserver_tarball_process_timeout </span><span class="type">(<tt>Any</tt>)</span><tt> => undef</tt></li>
+  </ul>
+</div>
+</div>
+
+    <div id="footer">
+  Generated on Mon May 30 09:28:23 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.6).
+</div>
+
+  </body>
+</html>
