@@ -1,6 +1,7 @@
 require 'metadata-json-lint/rake_task'
 require 'puppet_blacksmith/rake_tasks'
 require 'puppet-lint/tasks/puppet-lint'
+require 'puppet-strings/rake_tasks'
 require 'puppetlabs_spec_helper/rake_tasks'
 
 if RUBY_VERSION >= '1.9'

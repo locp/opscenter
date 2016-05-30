@@ -101,58 +101,40 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     <p>
-<p>Class: opscenter::pycrypto</p>
+<h1 id="label-Class%3A+opscenter%3A%3Apycrypto">Class: opscenter::pycrypto</h1>
 
-<h6 id="label-"></h6>
-
-<p>Install the pycrypto library which is a [requirement](<a
-href="https://docs.datastax.com/en/latest-opsc/opsc/configure/installPycrypto.html">docs.datastax.com/en/latest-opsc/opsc/configure/installPycrypto.html</a>)
-if you wish to use encryption for configuration values.  This class is
+<p>Install the pycrypto library which is a <a
+href="https://docs.datastax.com/en/latest-opsc/opsc/configure/installPycrypto.html">requirement</a>
+if you wish to use encryption for configuration values. This class is
 silently ignored on non-RedHat families.</p>
 
-<p>Attributes</p>
-<hr>
+<h2 id="label-Attributes">Attributes</h2>
 <ul><li>
-<p>`manage_epel`</p>
+<p><code>manage_epel</code> If set to true, the <strong>epel-release</strong>
+package will be installed. Default value &#39;false&#39;</p>
+</li><li>
+<p><code>package_ensure</code> This is passed to the package reference for
+<strong>pycrypto</strong>. Valid values are <strong>present</strong> or a
+version number. Default value &#39;present&#39;</p>
+</li><li>
+<p><code>package_name</code> The name of the PyCrypto package. Default value
+&#39;pycrypto&#39;</p>
+</li><li>
+<p><code>provider</code> The name of the provider of the pycrypto package.
+Default value &#39;pip&#39;</p>
+</li><li>
+<p><code>reqd_pckgs</code> Packages that are required to install the pycrypto
+package. Default value &#39;[&#39;python-devel&#39;, &#39;python-pip&#39;
+]&#39;</p>
 </li></ul>
 
-<p>If set to true, the *<strong>epel-release</strong>* package will be
-installed. Default value &#39;false&#39;</p>
-<ul><li>
-<p>`package_ensure`</p>
-</li></ul>
+<h2 id="label-Examples">Examples</h2>
 
-<p>This is passed to the package reference for *<strong>pycrypto</strong>*. 
-Valid values are *<strong>present</strong>* or a version number. Default
-value &#39;present&#39;</p>
-<ul><li>
-<p>`package_name`</p>
-</li></ul>
+<h2 id="label-Authors">Authors</h2>
 
-<p>The name of the PyCrypto package. Default value &#39;pycrypto&#39;</p>
-<ul><li>
-<p>`provider`</p>
-</li></ul>
+<p>Author Name <a href="mailto:author@domain.com">author@domain.com</a></p>
 
-<p>The name of the provider of the pycrypto package. Default value
-&#39;pip&#39;</p>
-<ul><li>
-<p>`reqd_pckgs`</p>
-</li></ul>
-
-<p>Packages that are required to install the pycrypto package. Default value
-&#39;[&#39;python-devel&#39;, &#39;python-pip&#39; ]&#39;</p>
-
-<p>Examples</p>
-<hr>
-
-<p>Authors</p>
-<hr>
-
-<p>Author Name &lt;author@domain.com&gt;</p>
-
-<p>Copyright</p>
-<hr>
+<h2 id="label-Copyright">Copyright</h2>
 
 <p>Copyright 2016 Your name here, unless otherwise noted.</p>
 </p>
@@ -182,7 +164,7 @@ value &#39;present&#39;</p>
 </div>
 
     <div id="footer">
-  Generated on Mon May 30 09:28:23 2016 by
+  Generated on Mon May 30 09:51:18 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.1.6).
 </div>
