@@ -2,6 +2,8 @@ source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['>= 3.3']
 
+gem 'beaker',
+    '2.33.0'
 gem 'beaker-rspec'
 gem 'coveralls',
     require: false
