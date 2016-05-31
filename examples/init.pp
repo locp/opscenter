@@ -9,4 +9,24 @@
 # Learn more about module testing here:
 # https://docs.puppet.com/guides/tests_smoke.html
 #
-include ::opscenter
+if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == 7 {
+  $service_systemd = true
+} else {
+  $service_systemd = false
+}
+
+class { 'opscenter::datastax_repo':
+  before => Class['opscenter']
+}
+
+class { 'opscenter::pycrypto':
+  manage_epel => true,
+}
+
+class { 'opscenter':
+  service_systemd => $service_systemd,
+}
+
+opscenter::cluster_name { 'Cluster1':
+  cassandra_seed_hosts => 'localhost',
+}
