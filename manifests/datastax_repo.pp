@@ -45,7 +45,7 @@ class opscenter::datastax_repo (
         include  => {
           'src' => false,
         },
-        notify   => Exec['update-cassandra-repos'],
+        notify   => Exec['update-opscenter-repos'],
       }
 
       # Required to wrap apt_update

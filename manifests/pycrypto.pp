@@ -7,8 +7,6 @@ class opscenter::pycrypto (
   $provider       = 'pip',
   $reqd_pckgs     = ['python-devel', 'python-pip' ],
   ){
-  include opscenter
-
   if $::osfamily == 'RedHat' {
     if $manage_epel {
       package { 'epel-release':

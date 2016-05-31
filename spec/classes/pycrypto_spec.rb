@@ -1,17 +1,6 @@
 require 'spec_helper'
 
 describe 'opscenter::pycrypto' do
-  let(:pre_condition) do
-    [
-      'define ini_setting ($ensure = nil,
-        $path,
-        $section,
-        $key_val_separator = nil,
-        $setting,
-        $value = nil) {}'
-    ]
-  end
-
   context 'RedHat with default values for all parameters' do
     let :facts do
       {
@@ -20,9 +9,8 @@ describe 'opscenter::pycrypto' do
     end
 
     it do
-      should compile
       should contain_class('opscenter::pycrypto')
-      should have_resource_count(260)
+      should have_resource_count(4)
       should contain_file('/usr/bin/pip-python').with(
         ensure: 'link',
         target: '/usr/bin/pip',
@@ -34,7 +22,6 @@ describe 'opscenter::pycrypto' do
           ensure: 'present',
           provider: 'pip'
         )
-        .that_comes_before('Package[opscenter]')
       should contain_package('python-devel')
         .with(
           ensure: 'present',
@@ -61,9 +48,8 @@ describe 'opscenter::pycrypto' do
     end
 
     it do
-      should compile
       should contain_class('opscenter::pycrypto')
-      should have_resource_count(261)
+      should have_resource_count(5)
       should contain_package('epel-release')
         .with(ensure: 'present')
         .that_comes_before('Package[python-devel]')
@@ -79,9 +65,8 @@ describe 'opscenter::pycrypto' do
     end
 
     it do
-      should compile
       should contain_class('opscenter::pycrypto')
-      should have_resource_count(256)
+      should have_resource_count(0)
     end
   end
 end
