@@ -31,8 +31,18 @@ From
 ### Beginning with opscenter
 
 ```puppet
-class { '::cassandra::datastax_repo': } ->
-  class { '::cassandra::opscenter': }
+class { 'opscenter::datastax_repo':
+  before => Class['cassandra', 'opscenter'],
+}
+
+class { 'opscenter::pycrypto':
+  manage_epel => true,
+}
+
+class { 'opscenter':
+  authentication_enabled => 'True',
+  service_systemd        => $service_systemd,
+}
 ```
 
 ## Usage
@@ -43,7 +53,7 @@ With DataStax Enterprise (DSE) one can specify a remote keyspace for storing the
 a cluster:
 
 ```puppet
-cassandra::opscenter::cluster_name { 'Cluster1':
+opscenter::cluster_name { 'Cluster1':
   cassandra_seed_hosts       => 'host1,host2',
   storage_cassandra_username => 'opsusr',
   storage_cassandra_password => 'opscenter',
