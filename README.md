@@ -65,10 +65,30 @@ opscenter::cluster_name { 'Cluster1':
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+### Classes
+
+#### Public Classes
+
+* opscenter: Install and configure DataStax OpsCenter.
+* opscenter::datastax_repo: Configure a repository for packages to install OpsCenter.
+* opscenter::pycrypto: If you intend to use encryption for configuration values, install
+                       the pycrypto library. The pycrypto library dependency is
+                       automatically included in the Debian package install.
+
+### Defined Types
+
+#### Public Defined Types
+
+* opscenter::cluster_name: Configure a cluster to be monitored by OpsCenter.
+
+#### Private Defined Types
+
+* opscenter::private::setting: Set individual settings in the configuration file.
+
+### Attributes
+
+The following attributes are available in the `::opscenter` class:
+
 
 ## Development
 
