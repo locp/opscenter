@@ -1,4 +1,4 @@
-# 
+# See module README
 define opscenter::private::setting (
   $path,
   $section,

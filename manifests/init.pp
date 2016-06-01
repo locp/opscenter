@@ -1,35 +1,6 @@
 # Class: opscenter
 # ===========================
-#
 # Install and configure DataStax OpsCenter
-#
-# Parameters
-# ----------
-#
-# Document parameters here.
-#
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
-#
-# Examples
-# --------
-#
-# @example
-#    class { 'opscenter':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
-#
-# Authors
-# -------
-#
-# Author Name <author@domain.com>
-#
-# Copyright
-# ---------
-#
-# Copyright 2016 Your name here, unless otherwise noted.
-#
 class opscenter (
     $agents_agent_certfile                          = undef,
     $agents_agent_keyfile                           = undef,
