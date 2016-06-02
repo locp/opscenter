@@ -69,10 +69,10 @@ opscenter::cluster_name { 'Cluster1':
 
 #### Public Classes
 
-* [`opscenter`](#opscenter): Install and configure DataStax OpsCenter.
-* [`opscenter::datastax_repo`](#opscenterdatastax_repo): Configure a
+* [`opscenter`](#class-opscenter): Install and configure DataStax OpsCenter.
+* [`opscenter::datastax_repo`](#class-opscenterdatastax_repo): Configure a
   repository for packages to install OpsCenter.
-* [`opscenter::pycrypto`](#opscenterpycrypto): If you intend to use encryption
+* [`opscenter::pycrypto`](#class-opscenterpycrypto): If you intend to use encryption
   for configuration values, install the pycrypto library. The pycrypto library
   dependency is automatically included in the Debian package install.
 
@@ -80,7 +80,8 @@ opscenter::cluster_name { 'Cluster1':
 
 #### Public Defined Types
 
-* [`opscenter::cluster_name`](#opscentercluster_name): Configure a cluster to be monitored by OpsCenter.
+* [`opscenter::cluster_name`](#defined-type-opscentercluster_name): Configure a cluster to be monitored by
+  OpsCenter.
 
 #### Private Defined Types
 
@@ -89,7 +90,7 @@ opscenter::cluster_name { 'Cluster1':
 
 ### Attributes
 
-#### opscenter
+#### Class opscenter
 
 This class installs and manages the DataStax OpsCenter.  Leaving the defaults
 as they are will provide a running OpsCenter without any authentication on
@@ -1038,7 +1039,7 @@ http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscConfigProps_r.html
 for more details.  A value of *undef* will ensure the setting is not present
 in the file.  Default value *undef*
 
-#### opscenter::datastax_repo
+#### Class opscenter::datastax_repo
 
 An optional class that will allow a suitable repository to be configured
 from which packages for DataStax Community can be downloaded.  Changing
@@ -1073,7 +1074,7 @@ On the Debian family, this is passed as the `release` attribute to an
 `apt::source` resource.  On the Red Hat family, it is ignored.
 Default value 'stable'
 
-#### opscenter::pycrypto
+#### Class opscenter::pycrypto
 
 On the Red Hat family of operating systems, if one intends to use encryption
 for configuration values then the pycrypto library is required.  This class
@@ -1109,7 +1110,7 @@ Default value 'pip'
 Packages that are required to install the pycrypto package.
 Default value '['python-devel', 'python-pip' ]'
 
-#### opscenter::cluster_name
+#### Defined Type opscenter::cluster_name
 
 With DataStax Enterprise, one can specify a remote keyspace for OpsCenter
 to store metric data (this is not available in the DataStax Community Edition).
