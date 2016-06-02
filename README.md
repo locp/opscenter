@@ -1085,10 +1085,6 @@ for more details.
 This class has no effect when included on nodes that are not in the Red Hat
 family.
 
-##### `ensure`
-Is deprecated (see https://github.com/locp/cassandra/wiki/DEP-016).  Use
-`package_ensure` instead.
-
 ##### `manage_epel`
 If set to true, the **epel-release** package will be installed.
 Default value 'false'
@@ -1251,3 +1247,11 @@ Contributions will be gratefully accepted.  Please go to the project page,
 fork the project, make your changes locally and then raise a pull request.
 Details on how to do this are available at
 https://guides.github.com/activities/contributing-to-open-source.
+
+### Contributors
+
+Before this project was spun off from
+[locp-cassandra](https://forge.puppet.com/locp/cassandra) contributions to how
+OpsCenter was configured in that module were made by
+[@Mike-Petersen](https://github.com/Mike-Petersen)
+and [@jonen10](https://github.com/jonen10).
