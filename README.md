@@ -80,11 +80,11 @@ opscenter::cluster_name { 'Cluster1':
 
 #### Public Defined Types
 
-* opscenter::cluster_name: Configure a cluster to be monitored by OpsCenter.
+* [`opscenter::cluster_name`](#opscentercluster_name): Configure a cluster to be monitored by OpsCenter.
 
 #### Private Defined Types
 
-* opscenter::private::setting: Set individual settings in the configuration
+* `opscenter::private::setting`: Set individual settings in the configuration
   file.
 
 ### Attributes
@@ -94,8 +94,6 @@ opscenter::cluster_name { 'Cluster1':
 This class installs and manages the DataStax OpsCenter.  Leaving the defaults
 as they are will provide a running OpsCenter without any authentication on
 port 8888.
-
-#### Attributes
 
 ##### `agents_agent_certfile`
 This sets the agent_certfile setting in the agents section of the
@@ -1042,7 +1040,209 @@ in the file.  Default value *undef*
 
 #### opscenter::datastax_repo
 
+An optional class that will allow a suitable repository to be configured
+from which packages for DataStax Community can be downloaded.  Changing
+the defaults will allow any Debian Apt or Red Hat Yum repository to be
+configured.
+
+##### `descr`
+On the Red Hat family, this is passed as the `descr` attribute to a
+`yumrepo` resource.  On the Debian family, it is passed as the `comment`
+attribute to an `apt::source` resource.
+Default value 'DataStax Repo for Apache Cassandra'
+
+##### `key_id`
+On the Debian family, this is passed as the `id` attribute to an `apt::key`
+resource.  On the Red Hat family, it is ignored.
+Default value '7E41C00F85BFC1706C4FFFB3350200F2B999A372'
+
+##### `key_url`
+On the Debian family, this is passed as the `source` attribute to an
+`apt::key` resource.  On the Red Hat family, it is ignored.
+Default value 'http://debian.datastax.com/debian/repo_key'
+
+##### `pkg_url`
+If left as the default, this will set the `baseurl` to
+'http://rpm.datastax.com/community' on a `yumrepo` resource
+on the Red Hat family.  On the Debian family, leaving this as the default
+will set the `location` attribute on an `apt::source` to
+'http://debian.datastax.com/community'.  Default value *undef*
+
+##### `release`
+On the Debian family, this is passed as the `release` attribute to an
+`apt::source` resource.  On the Red Hat family, it is ignored.
+Default value 'stable'
+
 #### opscenter::pycrypto
+
+On the Red Hat family of operating systems, if one intends to use encryption
+for configuration values then the pycrypto library is required.  This class
+will install it for the user.  See
+http://docs.datastax.com/en/opscenter/5.2//opsc/configure/installPycrypto.html
+for more details.
+
+This class has no effect when included on nodes that are not in the Red Hat
+family.
+
+##### `ensure`
+Is deprecated (see https://github.com/locp/cassandra/wiki/DEP-016).  Use
+`package_ensure` instead.
+
+##### `manage_epel`
+If set to true, the **epel-release** package will be installed.
+Default value 'false'
+
+##### `package_ensure`
+This is passed to the package reference for **pycrypto**.  Valid values are
+**present** or a version number.
+Default value 'present'
+
+##### `package_name`
+The name of the PyCrypto package.
+Default value 'pycrypto'
+
+##### `provider`
+The name of the provider of the pycrypto package.
+Default value 'pip'
+
+##### `reqd_pckgs`
+Packages that are required to install the pycrypto package.
+Default value '['python-devel', 'python-pip' ]'
+
+#### opscenter::cluster_name
+
+With DataStax Enterprise, one can specify a remote keyspace for OpsCenter
+to store metric data (this is not available in the DataStax Community Edition).
+
+##### `cassandra_seed_hosts`
+This sets the seed_hosts setting in the cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `config_path`
+The path to where OpsCenter stores the cluster configurations.
+Default value '/etc/opscenter/clusters'
+
+##### `storage_cassandra_api_port`
+This sets the api_port setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_bind_interface`
+This sets the bind_interface setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_connection_pool_size`
+This sets the connection_pool_size setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_connect_timeout`
+This sets the connect_timeout setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_cql_port`
+This sets the cql_port setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_keyspace`
+This sets the keyspace setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_local_dc_pref`
+This sets the local_dc_pref setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_password`
+This sets the password setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_retry_delay`
+This sets the retry_delay setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_seed_hosts`
+This sets the seed_hosts setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_send_rpc`
+This sets the send_rpc setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_ssl_ca_certs`
+This sets the ssl_ca_certs setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_ssl_client_key`
+This sets the ssl_client_key setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_ssl_client_pem`
+This sets the ssl_client_pem setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_ssl_validate`
+This sets the ssl_validate setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_used_hosts_per_remote_dc`
+This sets the used_hosts_per_remote_dc setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
+
+##### `storage_cassandra_username`
+This sets the username setting in the storage_cassandra section of the
+_cluster_name_.conf configuration file.  See
+http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscStoringCollectionDataDifferentCluster_t.html
+for more details.  A value of *undef* will ensure the setting is not
+present in the file.  Default value *undef*
 
 ## Development
 
