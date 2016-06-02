@@ -903,7 +903,7 @@ basic settings to ensure that the Cassandra service interacts with systemd
 better where *systemd_path* will be:
 
 * `/usr/lib/systemd/system` on the Red Hat family.
-* `/lib/systemd/system` on Debian the familiy.
+* `/lib/systemd/system` on Debian the family.
 
 Default value false
 
