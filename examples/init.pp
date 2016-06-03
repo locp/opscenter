@@ -16,7 +16,7 @@ if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == 7 {
 }
 
 class { 'opscenter::datastax_repo':
-  before => Class['opscenter']
+  before => Class['opscenter'],
 }
 
 class { 'opscenter::pycrypto':
