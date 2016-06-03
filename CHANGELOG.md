@@ -1,5 +1,16 @@
 # Change Log
 
+##2016-06-03 - Release 0.1.2 ([diff](https://github.com/locp/cassandra/compare/0.1.1...0.1.2))
+
+### Summary
+
+A non-functional release.
+
+### Improvements
+
+* A full suite of acceptance/beaker tests.
+* Code refactoring.
+
 ##2016-06-02 - Release 0.1.1 ([diff](https://github.com/locp/cassandra/compare/0.1.0...0.1.1))
 
 ### Summary
