@@ -17,10 +17,10 @@ deployment:
     branch: /^bugfix.*/
     commands: 
       - "./scripts/circle.bash merge release/patch"
-  feature1:
-    branch: feature/1/v1.0.0
+  feature3:
+    branch: feature/3/v2.0.0
     commands:
-      - "./scripts/circle.bash merge release/minor"
+      - "./scripts/circle.bash merge release/major"
   improvement: 
     branch: /^improvement.*/
     commands: 
