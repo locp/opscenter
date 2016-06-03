@@ -10,7 +10,7 @@ class opscenter (
     $service_ensure       = 'running',
     $service_name         = 'opscenterd',
     $service_provider     = undef,
-    $service_systemd      = false,
+    $service_systemd      = $::opscenter::params::service_systemd,
     $service_systemd_tmpl = 'opscenter/opscenterd.service.erb',
   ) inherits opscenter::params {
   if $service_provider != undef {

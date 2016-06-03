@@ -41,7 +41,6 @@ class { 'opscenter::pycrypto':
 
 class { 'opscenter':
   authentication_enabled => 'True',
-  service_systemd        => $service_systemd,
 }
 ```
 
@@ -905,7 +904,7 @@ better where *systemd_path* will be:
 * `/usr/lib/systemd/system` on the Red Hat family.
 * `/lib/systemd/system` on Debian the family.
 
-Default value false
+Default value is false except on RedHat 7 where it is true.
 
 ##### `service_systemd_tmpl`
 The location for the template for the systemd service file.  This attribute
