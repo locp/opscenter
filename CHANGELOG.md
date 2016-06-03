@@ -1,5 +1,12 @@
 # Change Log
 
+##2016-06-03 - Release 1.0.0 ([diff](https://github.com/locp/cassandra/compare/0.1.2...1.0.0))
+
+Bumping version from 0.1.2 to 1.0.0.  The API of this module is now the same as the
+OpsCenter related classes of version 1.24.0
+[locp-cassandra](https://forge.puppet.com/locp/cassandra) and is passing all the unit and
+acceptance tests as expected.
+
 ##2016-06-03 - Release 0.1.2 ([diff](https://github.com/locp/cassandra/compare/0.1.1...0.1.2))
 
 ### Summary
