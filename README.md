@@ -4,6 +4,7 @@
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with opscenter](#setup)
+    * [Upgrading](#upgrading)
     * [Beginning with opscenter](#beginning-with-opscenter)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
@@ -28,6 +29,51 @@ From
 
 ## Setup
 
+### Upgrading
+
+We follow [SemVer Versioning](http://semver.org/) and an update of the major
+release (i.e. from 1.*Y*.*Z* to 2.*Y*.*Z*) will indicate a significant change
+to the API which will most probably require a change to your manifest.
+
+#### Upgrading to 2.0.0
+
+The majority of class and type attributes were removed in favour of the more
+generic and flexible `settings` attribute.  The `settings` attribute requires
+you to know the section and setting that was previously being used.  This can
+be obtained from either checing the
+[OpsCenter configuration properties](http://docs.datastax.com/en/opscenter/5.2/opsc/configure/opscConfigProps_r.html)
+or the
+[Version 1.0 Reference](https://forge.puppet.com/locp/opscenter/0.1.2/readme#reference)
+of this module.  An example of an update to the `opscenter::cluster_name` type
+to change the following code:
+
+```puppet
+opscenter::cluster_name { 'Cluster1':
+  cassandra_seed_hosts       => 'host1,host2',
+  storage_cassandra_username => 'opsusr',
+  storage_cassandra_password => 'opscenter',
+  storage_cassandra_keyspace => 'OpsCenter_Cluster1'
+}`
+```
+
+to this new code:
+
+```puppet
+opscenter::cluster_name { 'Cluster1':
+  settings => {
+    'cassandra' => {
+      'seed_hosts' => 'node0,node1',
+    },
+    'storage_cassandra' => {
+      'username' => 'opsusr',
+      'password' => 'opscenter',
+      'keyspace' => 'OpsCenter_Cluster1',
+    },
+  },
+}
+
+```
+
 ### Beginning with opscenter
 
 ```puppet
@@ -40,19 +86,17 @@ class { 'opscenter::pycrypto':
 }
 
 class { 'opscenter':
-  settings        => {
+  'settings'  => {
     'authentication' => {
       'enabled' => 'False',
     },
-    'logging'   => {
-      'level' => 'WARN',
-    },
-    'webserver' => {
-      'interface' => '0.0.0.0',
-      'port'      => 8888,
-    },
+  'logging'   => {
+    'level' => 'WARN',
   },
-  service_systemd => $service_systemd,
+  'webserver' => { 
+    'interface' => '0.0.0.0',
+    'port'      => 8888,
+  },
 }
 ```
 
@@ -65,12 +109,11 @@ a cluster:
 
 ```puppet
 opscenter::cluster_name { 'Cluster1':
-  cassandra_seed_hosts       => 'host1,host2',
-  storage_cassandra_username => 'opsusr',
-  storage_cassandra_password => 'opscenter',
-  storage_cassandra_api_port => 9160,
-  storage_cassandra_cql_port => 9042,
-  storage_cassandra_keyspace => 'OpsCenter_Cluster1'
+  settings => {
+    'cassandra' => {
+      'seed_hosts' => 'node0,node1',
+    },
+  },
 }
 ```
 
