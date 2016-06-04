@@ -20,6 +20,7 @@ gem 'puppet-lint',
 gem 'rspec_junit_formatter',
     '0.2.2'
 gem 'rspec-puppet'
+gem 'rspec-puppet-utils'
 gem 'simplecov',
     require: false,
     group: :test

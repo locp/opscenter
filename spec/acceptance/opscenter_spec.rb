@@ -2,12 +2,6 @@ require 'spec_helper_acceptance'
 
 describe 'opscenter class' do
   install_pp = <<-EOS
-    if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == 7 {
-      $service_systemd = true
-    } else {
-      $service_systemd = false
-    }
-
     if $::osfamily == 'RedHat' {
       $cassandra_package = 'cassandra20'
       $version = '2.0.17-1'
@@ -59,8 +53,12 @@ describe 'opscenter class' do
 
       exec { '/bin/chown root:root /etc/apt/sources.list.d/datastax.list':
         unless  => '/usr/bin/test -O /etc/apt/sources.list.d/datastax.list',
-        require => Class['cassandra', 'opscenter']
+        require => Class['cassandra::datastax_agent', 'opscenter', 'opscenter::datastax_repo']
       }
+    }
+
+    class { 'opscenter::datastax_repo':
+      before => Class['cassandra', 'opscenter'],
     }
 
     class { 'cassandra':
@@ -77,13 +75,9 @@ describe 'opscenter class' do
       service_systemd             => $service_systemd
     }
 
-    class { '::cassandra::datastax_agent':
+    class { 'cassandra::datastax_agent':
       service_systemd => $service_systemd,
       require         => Class['cassandra']
-    }
-
-    class { 'opscenter::datastax_repo':
-      before => Class['cassandra', 'opscenter'],
     }
 
     class { 'opscenter::pycrypto':
@@ -91,12 +85,19 @@ describe 'opscenter class' do
     }
 
     class { 'opscenter':
-      authentication_enabled => 'True',
-      service_systemd        => $service_systemd,
+      settings => {
+        'authentication' => {
+          'enabled' => 'True',
+        },
+      },
     }
 
     opscenter::cluster_name { 'Cluster1':
-      cassandra_seed_hosts => 'localhost',
+      settings => {
+        'cassandra' => {
+          'seed_hosts' => 'localhost',
+        },
+      },
     }
   EOS
 

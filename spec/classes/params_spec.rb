@@ -4,7 +4,8 @@ describe 'opscenter::params' do
   context 'with default values for all parameters' do
     let :facts do
       {
-        osfamily: 'RedHat'
+        osfamily: 'RedHat',
+        operatingsystemmajrelease: 7
       }
     end
 
