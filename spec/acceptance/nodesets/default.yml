@@ -10,4 +10,4 @@ HOSTS:
       - 'apt-get install -y sudo ufw wget'
 CONFIG: 
   type: foss
-  log_level: notice
+  log_level: info
