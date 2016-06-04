@@ -12,6 +12,7 @@
 
 ## Description
 
+[![CircleCI](https://circleci.com/gh/locp/opscenter.svg?style=svg)](https://circleci.com/gh/locp/opscenter)
 [![Coverage Status](https://coveralls.io/repos/github/locp/opscenter/badge.svg?branch=master)](https://coveralls.io/github/locp/opscenter?branch=master)
 [![Join the chat at https://gitter.im/locp/opscenter](https://badges.gitter.im/locp/opscenter.svg)](https://gitter.im/locp/opscenter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
