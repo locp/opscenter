@@ -12,7 +12,7 @@ Note that this is an update of the major release number, please see the notes on
 * Automatically set `service_systemd` to a suitable value.
 
 ### Bugfixes
-* Corrected typos in the chanlge log.
+* Corrected typos in the change log.
 
 ##2016-06-03 - Release 1.0.0 ([diff](https://github.com/locp/opscenter/compare/0.1.2...1.0.0))
 
