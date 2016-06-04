@@ -12,17 +12,12 @@ class opscenter (
     $service_provider     = undef,
     $service_systemd      = $::opscenter::params::service_systemd,
     $service_systemd_tmpl = 'opscenter/opscenterd.service.erb',
+    $settings             = {},
   ) inherits opscenter::params {
   if $service_provider != undef {
     System {
       provider => $service_provider,
     }
-  }
-
-  package { 'opscenter':
-    ensure => $package_ensure,
-    name   => $package_name,
-    before => Service['opscenterd'],
   }
 
   if $service_systemd {
@@ -44,6 +39,21 @@ class opscenter (
       notify  => Exec['opscenter_reload_systemctl'],
     }
   }
+
+  package { 'opscenter':
+    ensure => $package_ensure,
+    name   => $package_name,
+    before => Service['opscenterd'],
+  }
+
+  $defaults = {
+    ensure  => present,
+    path    => $config_file,
+    require => Package['opscenter'],
+    notify  => Service['opscenterd'],
+  }
+
+  create_ini_settings($settings, $defaults)
 
   service { 'opscenterd':
     ensure => $service_ensure,
