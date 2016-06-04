@@ -1,5 +1,19 @@
 # Change Log
 
+##2016-06-03 - Release 2.0.0 ([diff](https://github.com/locp/opscenter/compare/1.0.0...2.0.0))
+
+### Summary
+Note that this is an update of the major release number, please see the notes on
+[Upgrading](https://forge.puppet.com/locp/opscenter#Upgrading).
+
+
+### Features
+* A radical overhaul of the API making it more flexible/powerful.
+* Automatically set `service_systemd` to a suitable value.
+
+### Bugfixes
+* Corrected typos in the chanlge log.
+
 ##2016-06-03 - Release 1.0.0 ([diff](https://github.com/locp/opscenter/compare/0.1.2...1.0.0))
 
 Bumping version from 0.1.2 to 1.0.0.  The API of this module is now the same as the
