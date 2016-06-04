@@ -14,13 +14,10 @@ class opscenter::params {
       $systemctl = '/usr/bin/systemctl'
       $systemd_path = '/usr/lib/systemd/system'
 
-      case $::operatingsystemmajrelease {
-        7: {
-            $service_systemd = true
-        }
-        default: {
-            $service_systemd = false
-        }
+      if $::operatingsystemmajrelease == 7 {
+        $service_systemd = true
+      } else {
+        $service_systemd = false
       }
     }
     default: {

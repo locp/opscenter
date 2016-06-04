@@ -18,14 +18,14 @@ class { 'opscenter::pycrypto':
 }
 
 class { 'opscenter':
-  settings  => {
+  settings => {
     'authentication' => {
       'enabled' => 'False',
     },
-    'logging'   => {
+    'logging'        => {
       'level' => 'WARN',
     },
-    'webserver' => {
+    'webserver'      => {
       'interface' => '0.0.0.0',
       'port'      => 8888,
     },
