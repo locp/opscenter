@@ -2,6 +2,12 @@ require 'spec_helper_acceptance'
 
 describe 'opscenter class' do
   install_pp = <<-EOS
+    if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == 7 {
+      $service_systemd = true
+    } else {
+      $service_systemd = false
+    }
+
     if $::osfamily == 'RedHat' {
       $cassandra_package = 'cassandra20'
       $version = '2.0.17-1'
