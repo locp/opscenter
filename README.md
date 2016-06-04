@@ -1,5 +1,7 @@
 # opscenter
 
+[![Join the chat at https://gitter.im/locp/opscenter](https://badges.gitter.im/locp/opscenter.svg)](https://gitter.im/locp/opscenter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 #### Table of Contents
 
 1. [Description](#description)
