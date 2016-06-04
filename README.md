@@ -1,7 +1,5 @@
 # opscenter
 
-[![Join the chat at https://gitter.im/locp/opscenter](https://badges.gitter.im/locp/opscenter.svg)](https://gitter.im/locp/opscenter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 #### Table of Contents
 
 1. [Description](#description)
@@ -15,6 +13,7 @@
 ## Description
 
 [![Coverage Status](https://coveralls.io/repos/github/locp/opscenter/badge.svg?branch=master)](https://coveralls.io/github/locp/opscenter?branch=master)
+[![Join the chat at https://gitter.im/locp/opscenter](https://badges.gitter.im/locp/opscenter.svg)](https://gitter.im/locp/opscenter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Installs DataStax OpsCenter on RHEL/Ubuntu/Debian.  This functionality used to be included with the
 [locp/cassandra](https://forge.puppet.com/locp/cassandra) Puppet module, but now that DataStax are about to change
