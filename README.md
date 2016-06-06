@@ -55,7 +55,7 @@ opscenter::cluster_name { 'Cluster1':
   storage_cassandra_username => 'opsusr',
   storage_cassandra_password => 'opscenter',
   storage_cassandra_keyspace => 'OpsCenter_Cluster1'
-}`
+}
 ```
 
 to this new code:
@@ -88,17 +88,17 @@ class { 'opscenter::pycrypto':
 }
 
 class { 'opscenter':
-  'settings'  => {
+  settings  => {
     'authentication' => {
       'enabled' => 'False',
     },
-  'logging'   => {
-    'level' => 'WARN',
-  },
-  'webserver' => { 
-    'interface' => '0.0.0.0',
-    'port'      => 8888,
-  },
+    'logging'   => {
+      'level' => 'WARN',
+    },
+    'webserver' => { 
+      'interface' => '0.0.0.0',
+      'port'      => 8888,
+    },
 }
 ```
 
@@ -305,7 +305,7 @@ Default value {} also the settings will have the following defaults:
   path    => $cluster_file,
   require => [
     File["opscenter: ${title}"],
-    Package['opscenter']
+    Package['opscenter'],
   ],
   notify  => Service['opscenterd'],
 }
