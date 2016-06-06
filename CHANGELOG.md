@@ -1,5 +1,10 @@
 # Change Log
 
+##2016-06-06 - Release 2.0.1 ([diff](https://github.com/locp/opscenter/compare/2.0.0...2.0.1))
+
+### Summary
+Minor bugfix for the puppetlabs-inifile version and fixed some typos in the README.
+
 ##2016-06-03 - Release 2.0.0 ([diff](https://github.com/locp/opscenter/compare/1.0.0...2.0.0))
 
 ### Summary
