@@ -1,5 +1,10 @@
 # Change Log
 
+##2016-06-26 - Release 2.0.2 ([diff](https://github.com/locp/opscenter/compare/2.0.1...2.0.2))
+
+### Summary
+Minor bugfix after the new version of RuboCop picked up formatting issues in Vagrantfile.
+
 ##2016-06-06 - Release 2.0.1 ([diff](https://github.com/locp/opscenter/compare/2.0.0...2.0.1))
 
 ### Summary
