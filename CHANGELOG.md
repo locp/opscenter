@@ -1,5 +1,10 @@
 # Change Log
 
+##2016-07-09 - Release 2.0.3 ([diff](https://github.com/locp/opscenter/compare/2.0.2...2.0.3))
+
+### Summary
+Removed puppetlabs-firewall dependency as it is not required.
+
 ##2016-06-26 - Release 2.0.2 ([diff](https://github.com/locp/opscenter/compare/2.0.1...2.0.2))
 
 ### Summary
