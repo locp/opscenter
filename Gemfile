@@ -10,6 +10,7 @@ gem 'coveralls',
 gem 'facter',
     '>= 1.7.0'
 gem 'metadata-json-lint'
+gem 'pry'
 gem 'puppet',
     puppetversion
 gem 'puppetlabs_spec_helper',
