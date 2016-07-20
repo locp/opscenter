@@ -59,12 +59,12 @@ describe 'opscenter class' do
 
       exec { '/bin/chown root:root /etc/apt/sources.list.d/datastax.list':
         unless  => '/usr/bin/test -O /etc/apt/sources.list.d/datastax.list',
-        require => Class['cassandra::datastax_agent', 'opscenter', 'opscenter::datastax_repo']
+        require => Class['cassandra::datastax_agent', 'opscenter::datastax_repo']
       }
     }
 
     class { 'opscenter::datastax_repo':
-      before => Class['cassandra', 'opscenter'],
+      before => Class['cassandra'],
     }
 
     class { 'cassandra':
