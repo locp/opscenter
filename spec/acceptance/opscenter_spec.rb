@@ -1,7 +1,7 @@
 require 'spec_helper_acceptance'
 
 describe 'opscenter class' do
-  install_pp = <<-EOS
+  install_cassandra_pp = <<-EOS
     if $::osfamily == 'RedHat' and $::operatingsystemmajrelease == 7 {
       $service_systemd = true
     } else {
@@ -10,7 +10,7 @@ describe 'opscenter class' do
 
     if $::osfamily == 'RedHat' {
       $cassandra_package = 'cassandra20'
-      $version = '2.0.17-1'
+      $version = '3.0.8-1'
 
       class { 'cassandra::java':
         before => Class['cassandra']
@@ -55,7 +55,7 @@ describe 'opscenter class' do
       }
 
       $cassandra_package = 'cassandra'
-      $version = '2.0.17'
+      $version = '3.0.8'
 
       exec { '/bin/chown root:root /etc/apt/sources.list.d/datastax.list':
         unless  => '/usr/bin/test -O /etc/apt/sources.list.d/datastax.list',
@@ -85,7 +85,9 @@ describe 'opscenter class' do
       service_systemd => $service_systemd,
       require         => Class['cassandra']
     }
+  EOS
 
+  install_opscenter_pp = <<-EOS
     class { 'opscenter::pycrypto':
       manage_epel => true,
     }
@@ -107,13 +109,23 @@ describe 'opscenter class' do
     }
   EOS
 
-  describe 'Initial installation.' do
+  describe 'Cassandra installation.' do
     it 'Should run without error.' do
-      apply_manifest(install_pp, catch_failures: true)
+      apply_manifest(install_cassandra_pp, catch_failures: true)
     end
 
     it 'Check code is idempotent.' do
-      expect(apply_manifest(install_pp, catch_failures: true).exit_code).to be_zero
+      expect(apply_manifest(install_cassandra_pp, catch_failures: true).exit_code).to be_zero
+    end
+  end
+
+  describe 'OpsCenter installation.' do
+    it 'Should run without error.' do
+      apply_manifest(install_opscenter_pp, catch_failures: true)
+    end
+
+    it 'Check code is idempotent.' do
+      expect(apply_manifest(install_opscenter_pp, catch_failures: true).exit_code).to be_zero
     end
   end
 

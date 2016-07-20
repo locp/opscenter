@@ -1,8 +1,12 @@
 require 'beaker-rspec'
+require 'pry'
 
 hosts.each do |host|
-  # Install Puppet
-  on host, install_puppet
+  if host.name =~ /ubuntu.*1604/
+    host.install_package('puppet')
+  else
+    install_puppet_on(host)
+  end
 end
 
 RSpec.configure do |c|
@@ -18,13 +22,12 @@ RSpec.configure do |c|
       on host, puppet('module', 'install',
                       'puppetlabs-apt'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install',
-                      'puppetlabs-firewall'), acceptable_exit_codes: [0, 1]
-      on host, puppet('module', 'install',
                       'puppetlabs-inifile'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install',
                       'puppetlabs-stdlib'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install',
                       'locp-cassandra'), acceptable_exit_codes: [0, 1]
+
     end
   end
 end
