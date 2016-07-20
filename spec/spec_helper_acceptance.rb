@@ -27,7 +27,6 @@ RSpec.configure do |c|
                       'puppetlabs-stdlib'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install',
                       'locp-cassandra'), acceptable_exit_codes: [0, 1]
-
     end
   end
 end
