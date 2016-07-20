@@ -1,5 +1,10 @@
 # Change Log
 
+##2016-07-20 - Release 2.0.4 ([diff](https://github.com/locp/opscenter/compare/2.0.3...2.0.4))
+
+### Summary
+A non-functional improvement.  We now test against Ubuntu 16.04.
+
 ##2016-07-09 - Release 2.0.3 ([diff](https://github.com/locp/opscenter/compare/2.0.2...2.0.3))
 
 ### Summary
