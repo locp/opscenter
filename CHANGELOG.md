@@ -1,5 +1,11 @@
 # Change Log
 
+##2016-10-01 - Release 2.0.5 ([diff](https://github.com/locp/opscenter/compare/2.0.4...2.0.5))
+
+### Summary
+Fixed automated acceptance tests now that `locp-cassandra` 2.0.0 has been released.
+
+
 ##2016-07-20 - Release 2.0.4 ([diff](https://github.com/locp/opscenter/compare/2.0.3...2.0.4))
 
 ### Summary
