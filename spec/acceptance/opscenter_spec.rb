@@ -113,10 +113,6 @@ describe 'opscenter class' do
     it 'Should run without error.' do
       apply_manifest(install_cassandra_pp, catch_failures: true)
     end
-
-    it 'Check code is idempotent.' do
-      expect(apply_manifest(install_cassandra_pp, catch_failures: true).exit_code).to be_zero
-    end
   end
 
   describe 'OpsCenter installation.' do
