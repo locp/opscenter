@@ -25,7 +25,7 @@ RSpec.configure do |c|
                       'puppetlabs-inifile'), acceptable_exit_codes: [0, 1]
       on host, puppet('module', 'install',
                       'puppetlabs-stdlib'), acceptable_exit_codes: [0, 1]
-      on host, puppet('module', 'install',
+      on host, puppet('module', 'install', '--version', '1.25.2',
                       'locp-cassandra'), acceptable_exit_codes: [0, 1]
     end
   end
