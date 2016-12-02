@@ -13,27 +13,10 @@ dependencies:
   post:
     - rvm cleanup all
 deployment: 
-  bugfix: 
-    branch: /^bugfix.*/
-    commands: 
-      - "./scripts/circle.bash merge release/patch"
-  feature3:
-    branch: feature/3/v2.0.0
-    commands:
-      - "./scripts/circle.bash merge release/major"
-  improvement: 
-    branch: /^improvement.*/
-    commands: 
-      - "./scripts/circle.bash merge release/patch"
   master: 
     branch: master
     commands: 
-      - "./scripts/circle.bash merge release/latest"
       - "./scripts/circle.bash deploy"
-  patch_release: 
-    branch: release/patch
-    commands: 
-      - "./scripts/circle.bash merge release/minor"
 machine: 
   environment:
     PUPPET_GEM_VERSION: '~> 4.0'
