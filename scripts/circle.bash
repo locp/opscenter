@@ -9,7 +9,7 @@ acceptance_tests () {
   status=0
   BEAKER_set=''
 
-  echo "$CIRCLE_BRANCH" | grep -Eq -e '^release-/' -e '^hotfix-/'
+  echo "$CIRCLE_BRANCH" | grep -Eq -e '^release-' -e '^hotfix-'
 
   if [ $? != 0 ]; then
     echo "Not a release branch."
