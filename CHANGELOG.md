@@ -1,6 +1,6 @@
 # Change Log
 
-##2016-12-02 - Release 2.0.6 ([diff](https://github.com/locp/opscenter/compare/2.0.5...2.0.6))
+##2016-12-02 - Release 2.0.7 ([diff](https://github.com/locp/opscenter/compare/2.0.5...2.0.7))
 
 ### Summary
 
