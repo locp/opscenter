@@ -10,7 +10,7 @@ if sys.argv[1] == '--local':
     print data['version']
 
 if sys.argv[1] == '--forge':
-    url = 'https://forgeapi.puppetlabs.com/v3/modules/locp-cassandra'
+    url = 'https://forgeapi.puppetlabs.com/v3/modules/locp-opscenter'
     response = urllib.urlopen(url)
     data = json.loads(response.read())
     print data['current_release']['version']
