@@ -1,11 +1,18 @@
 # Change Log
 
+##2016-12-03 - Release 2.0.8 ([diff](https://github.com/locp/opscenter/compare/2.0.7...2.0.8))
+
+### Summary
+
+#### Bugfix
+* Fixed a problem that was showing the master build as failed.
+
 ##2016-12-02 - Release 2.0.7 ([diff](https://github.com/locp/opscenter/compare/2.0.5...2.0.7))
 
 ### Summary
 
 #### Bugfix
-* Rubocop appeasement since upgrade of that gem to 0.46.0.  Fixes #10.
+* Rubocop appeasement since upgrade of that gem to 0.46.0.
 
 ##2016-10-01 - Release 2.0.5 ([diff](https://github.com/locp/opscenter/compare/2.0.4...2.0.5))
 
