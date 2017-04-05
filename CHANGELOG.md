@@ -1,5 +1,15 @@
 # Change Log
 
+##2017-04-05 - Release 2.0.9 ([diff](https://github.com/locp/opscenter/compare/2.0.8...2.0.9))
+
+### Summary
+
+Hotfix to remedy build failures.
+
+#### Bugfix
+* Rubocop errors (see #16).
+* Puppet metadata errors (see #17).
+
 ##2016-12-03 - Release 2.0.8 ([diff](https://github.com/locp/opscenter/compare/2.0.7...2.0.8))
 
 ### Summary
