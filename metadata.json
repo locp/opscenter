@@ -1,6 +1,6 @@
 {
   "name": "locp-opscenter",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "author": "locp",
   "summary": "Installs DataStax OpsCenter on RHEL/Ubuntu/Debian.",
   "license": "Apache-2.0",
