@@ -1,5 +1,11 @@
 # Change Log
 
+##2017-09-16 - Release 2.0.10 ([diff](https://github.com/locp/opscenter/compare/2.0.9...2.0.10))
+
+### Summary
+
+Hotfix to remedy build failures.
+
 ##2017-04-05 - Release 2.0.9 ([diff](https://github.com/locp/opscenter/compare/2.0.8...2.0.9))
 
 ### Summary

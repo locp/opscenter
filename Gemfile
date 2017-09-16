@@ -1,6 +1,6 @@
 source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['>= 3.3']
+puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['>= 3.3', '< 5.0']
 
 gem 'beaker',
     '2.33.0'
@@ -32,5 +32,5 @@ if RUBY_VERSION >= '1.8.7' && RUBY_VERSION < '1.9'
   gem 'rspec', '~> 2.0'
 else
   # rubocop requires ruby >= 1.9
-  gem 'rubocop'
+  gem 'rubocop', '< 0.50'
 end
